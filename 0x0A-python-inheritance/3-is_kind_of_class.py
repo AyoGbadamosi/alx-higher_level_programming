@@ -1,12 +1,10 @@
-#!/usr/bin/phython3
+#!/usr/bin/python3
+
 """
-This module contains same class
-or inherit from task
+module for same class or inherit from task
 """
 
 
 def is_kind_of_class(obj, a_class):
-    """
-    Return if the object is an instance of a class
-    """
+    """Return if the object is an instance of a class"""
     return isinstance(obj, a_class)
