@@ -13,27 +13,27 @@ Now test it:
 
 correct cases
 
-    >>> say_my_name("Wuhibe")
-    My name is Wuhibe 
+    >>> say_my_name("Gbadamosi")
+    My name is Gbadamosi 
 
-    >>> say_my_name("Wuhibe", "Tamire")
-    My name is Wuhibe Tamire
+    >>> say_my_name("Gbadamosi", "Ayomide")
+    My name is Gbadamosi Ayomide
 
-    >>> say_my_name("", "Tamire")
-    My name is  Tamire
+    >>> say_my_name("", "Ayomide")
+    My name is  Ayomide
 
     >>> say_my_name("", "")
     My name is  
 
 error cases
 
-    >>> say_my_name(22, "Tamire")
+    >>> say_my_name(22, "Ayomide")
     Traceback (most recent call last):
-    TypeError: First_name must be a string
+    TypeError: first_name must be a string
 
-    >>> say_my_name("Wuhibe", None)
+    >>> say_my_name("Gbadamosi", None)
     Traceback (most recent call last):
-    TypeError: Last_name must be a string
+    TypeError: last_name must be a string
 
     >>> say_my_name()
     Traceback (most recent call last):
@@ -41,4 +41,8 @@ error cases
 
     >>> say_my_name(0, 1)
     Traceback (most recent call last):
-    TypeError: First_name must be a string
+    TypeError: first_name must be a string
+
+    >>> say_my_name("Betty", 0)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
