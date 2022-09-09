@@ -1,11 +1,8 @@
 #!/usr/bin/node
 // class that defines a rectangle
 
-class Rectangle{
-  width;
-  height;
-  
-  constructor(w, h){
+class Rectangle {
+  constructor (w, h) {
     this.width = w;
     this.height = h;
   }
