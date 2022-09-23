@@ -1,21 +1,20 @@
 #!/usr/bin/python3
-"""ALX School interview"""
-
+"""lists the 10 most recent commits on a given GitHub repository.
+"""
+import sys
 import requests
-from sys import argv
+
 
 if __name__ == "__main__":
-    commits = 'https://api.github.com/repos/'\
-              + argv[2] + '/' + argv[1] + '/commits'
-    response = requests.get(commits)
-    if "json" not in response.headers.get('content-type'):
-        print("Not a valid JSON")
-    else:
-        i = 0
-        response = response.json()
-        for commit in response:
-            if i > 9:
-                break
-            print(commit.get('sha') + ': ', end="")
-            print(commit.get('commit').get('author').get('name'))
-            i += 1 
+    url = "https://api.github.com/repos/{}/{}/commits".format(
+        sys.argv[2], sys.argv[1])
+
+    r = requests.get(url)
+    commits = r.json()
+    try:
+        for i in range(10):
+            print("{}: {}".format(
+                commits[i].get("sha"),
+                commits[i].get("commit").get("author").get("name")))
+    except IndexError:
+        pass
