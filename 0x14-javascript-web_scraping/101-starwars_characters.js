@@ -1,6 +1,6 @@
 #!/usr/bin/node
 const request = require('request');
-const url = 'http://swapi.co/api/films/';
+const url = 'https://swapi-api.hbtn.io/';
 let id = parseInt(process.argv[2], 10);
 let characters = [];
 
